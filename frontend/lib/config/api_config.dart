@@ -4,21 +4,9 @@ import 'package:flutter/foundation.dart' show kIsWeb;
 /// API configuration for the JobConnect app.
 class ApiConfig {
   /// Base URL for the API.
-  /// Automatically detects if it should use '10.0.2.2' (Android Emulator)
-  /// or 'localhost' (Web/Desktop/iOS).
+  /// Points to the deployed backend on Render.
   static String get baseUrl {
-    if (kIsWeb) {
-      return 'http://localhost:5000';
-    }
-    try {
-      if (Platform.isAndroid) {
-        // Use local IP for physical devices, 10.0.2.2 is only for emulators
-        return 'http://172.16.11.68:5000';
-      }
-    } catch (_) {
-      // Platform.isAndroid can throw on web even with kIsWeb check in some cases
-    }
-    return 'http://localhost:5000';
+    return 'https://job-portal-knv8.onrender.com';
   }
 
   // Auth endpoints

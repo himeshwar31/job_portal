@@ -25,7 +25,7 @@ def create_app():
     app.config.from_object(Config)
 
     # Initialize extensions
-    CORS(app)
+    CORS(app, resources={r"/*": {"origins": "*"}})
     JWTManager(app)
 
     # Register blueprints
@@ -59,5 +59,7 @@ def create_app():
 
 if __name__ == "__main__":
     app = create_app()
-    print("\n🚀 JobConnect API running at http://localhost:5000\n")
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    import os
+    port = int(os.environ.get("PORT", 5000))
+    print(f"\n🚀 JobConnect API running at http://0.0.0.0:{port}\n")
+    app.run(host="0.0.0.0", port=port, debug=True)

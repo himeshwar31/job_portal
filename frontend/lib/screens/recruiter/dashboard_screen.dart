@@ -262,7 +262,7 @@ class _RecruiterDashboardScreenState extends State<RecruiterDashboardScreen> {
                           const SizedBox(height: 8),
                           Row(
                             children: [
-                              Icon(Icons.location_on_outlined,
+                              const Icon(Icons.location_on_outlined,
                                   color: Colors.white38, size: 14),
                               const SizedBox(width: 4),
                               Text(
@@ -271,7 +271,7 @@ class _RecruiterDashboardScreenState extends State<RecruiterDashboardScreen> {
                                     color: Colors.white38, fontSize: 12),
                               ),
                               const SizedBox(width: 16),
-                              Icon(Icons.payments_outlined,
+                              const Icon(Icons.payments_outlined,
                                   color: Colors.white38, size: 14),
                               const SizedBox(width: 4),
                               Expanded(
